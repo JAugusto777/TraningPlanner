@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plano de Treino - Vôlei em Casa</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Estilo customizado para usar a fonte Inter */
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        /* Efeito de hover sutil nos cards */
+        .workout-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05), 0 0 0 1px rgba(59, 130, 246, 0.5);
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-gray-200 antialiased">
+
+    <!-- Container Principal -->
+    <div class="container mx-auto p-4 md:p-8">
+
+        <!-- Cabeçalho -->
+        <header class="text-center mb-10">
+            <h1 class="text-4xl md:text-5xl font-bold text-white mb-2">Seu Treino Semanal de Vôlei</h1>
+            <p class="text-lg text-blue-300">Foco em potência, agilidade e prevenção de lesões.</p>
+        </header>
+
+        <!-- Grade de Treinos -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+            <!-- Dia 1: Segunda-feira -->
+            <div class="workout-card bg-gray-800 rounded-xl shadow-lg p-6 transition-transform duration-300">
+                <h2 class="text-2xl font-bold text-blue-400 mb-1">Segunda-feira</h2>
+                <p class="text-gray-400 mb-4 font-semibold">Foco: Força de Pernas e Core</p>
+                <table class="w-full text-left">
+                    <thead>
+                        <tr class="border-b border-gray-600">
+                            <th class="py-2 text-sm text-gray-300">Exercício</th>
+                            <th class="py-2 text-sm text-gray-300">Séries x Reps</th>
+                            <th class="py-2 text-sm text-gray-300">Descanso</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="border-b border-gray-700">
+                            <td class="py-3">Agachamento Livre</td>
+                            <td class="py-3">3 x 15</td>
+                            <td class="py-3">60s</td>
+                        </tr>
+                        <tr class="border-b border-gray-700">
+                            <td class="py-3">Afundo (cada perna)</td>
+                            <td class="py-3">3 x 12</td>
+                            <td class="py-3">60s</td>
+                        </tr>
+                        <tr class="border-b border-gray-700">
+                            <td class="py-3">Ponte de Glúteos</td>
+                            <td class="py-3">3 x 20</td>
+                            <td class="py-3">45s</td>
+                        </tr>
+                        <tr class="border-b border-gray-700">
+                            <td class="py-3">Elevação de Panturrilha</td>
+                            <td class="py-3">4 x 20</td>
+                            <td class="py-3">30s</td>
+                        </tr>
+                        <tr>
+                            <td class="py-3">Prancha Abdominal</td>
+                            <td class="py-3">3 x 45 seg</td>
+                            <td class="py-3">45s</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Dia 2: Terça-feira -->
+            <div class="workout-card bg-gray-800 rounded-xl shadow-lg p-6 transition-transform duration-300">
+                <h2 class="text-2xl font-bold text-blue-400 mb-1">Terça-feira</h2>
+                <p class="text-gray-400 mb-4 font-semibold">Foco: Tronco e Ombros</p>
+                <table class="w-full text-left">
+                    <thead>
+                        <tr class="border-b border-gray-600">
+                            <th class="py-2 text-sm text-gray-300">Exercício</th>
+                            <th class="py-2 text-sm text-gray-300">Séries x Reps</th>
+                            <th class="py-2 text-sm text-gray-300">Descanso</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="border-b border-gray-700">
+                            <td class="py-3">Flexão de Braço (joelhos opcional)</td>
+                            <td class="py-3">3 x Máx.</td>
+                            <td class="py-3">60s</td>
+                        </tr>
+                        <tr class="border-b border-gray-700">
+                            <td class="py-3">Remada Curvada (com mochila)</td>
+                            <td class="py-3">3 x 15</td>
+                            <td class="py-3">60s</td>
+                        </tr>
+                        <tr class="border-b border-gray-700">
+                            <td class="py-3">Desenvolvimento (com garrafas)</td>
+                            <td class="py-3">3 x 12</td>
+                            <td class="py-3">60s</td>
+                        </tr>
+                        <tr class="border-b border-gray-700">
+                            <td class="py-3">Tríceps no Banco/Cadeira</td>
+                            <td class="py-3">3 x 15</td>
+                            <td class="py-3">45s</td>
+                        </tr>
+                        <tr>
+                            <td class="py-3">Prancha Lateral (cada lado)</td>
+                            <td class="py-3">3 x 30 seg</td>
+                            <td class="py-3">30s</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Dia 3: Quarta-feira -->
+            <div class="workout-card bg-gray-800 rounded-xl shadow-lg p-6 transition-transform duration-300">
+                <h2 class="text-2xl font-bold text-green-400 mb-1">Quarta-feira</h2>
+                <p class="text-gray-400 mb-4 font-semibold">Foco: Descanso Ativo e Mobilidade</p>
+                <div class="text-gray-300 space-y-2">
+                    <p>• 20 min de caminhada leve.</p>
+                    <p>• Alongamento de quadríceps (30s cada perna).</p>
+                    <p>• Alongamento de posteriores (30s cada perna).</p>
+                    <p>• Alongamento de peitoral e ombros (30s).</p>
+                    <p>• Rotação de tronco (20x).</p>
+                    <p class="pt-2 text-sm text-gray-500">*O objetivo é recuperar o corpo, não forçar.</p>
+                </div>
+            </div>
+
+            <!-- Dia 4: Quinta-feira -->
+            <div class="workout-card bg-gray-800 rounded-xl shadow-lg p-6 transition-transform duration-300">
+                <h2 class="text-2xl font-bold text-blue-400 mb-1">Quinta-feira</h2>
+                <p class="text-gray-400 mb-4 font-semibold">Foco: Pliometria e Agilidade (Potência)</p>
+                <table class="w-full text-left">
+                    <thead>
+                        <tr class="border-b border-gray-600">
+                            <th class="py-2 text-sm text-gray-300">Exercício</th>
+                            <th class="py-2 text-sm text-gray-300">Séries x Reps</th>
+                            <th class="py-2 text-sm text-gray-300">Descanso</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="border-b border-gray-700">
+                            <td class="py-3">Agachamento com Salto</td>
+                            <td class="py-3">4 x 10</td>
+                            <td class="py-3">75s</td>
+                        </tr>
+                        <tr class="border-b border-gray-700">
+                            <td class="py-3">Salto em Caixa (use um degrau)</td>
+                            <td class="py-3">4 x 8</td>
+                            <td class="py-3">90s</td>
+                        </tr>
+                        <tr class="border-b border-gray-700">
+                            <td class="py-3">Deslocamento Lateral Rápido</td>
+                            <td class="py-3">3 x 45 seg</td>
+                            <td class="py-3">45s</td>
+                        </tr>
+                        <tr class="border-b border-gray-700">
+                            <td class="py-3">Burpee (sem flexão)</td>
+                            <td class="py-3">3 x 10</td>
+                            <td class="py-3">75s</td>
+                        </tr>
+                        <tr>
+                            <td class="py-3">Abdominal Remador</td>
+                            <td class="py-3">3 x 20</td>
+                            <td class="py-3">45s</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Dia 5: Sexta-feira -->
+            <div class="workout-card bg-gray-800 rounded-xl shadow-lg p-6 transition-transform duration-300">
+                <h2 class="text-2xl font-bold text-blue-400 mb-1">Sexta-feira</h2>
+                <p class="text-gray-400 mb-4 font-semibold">Foco: Condicionamento Full Body</p>
+                <table class="w-full text-left">
+                    <thead>
+                        <tr class="border-b border-gray-600">
+                            <th class="py-2 text-sm text-gray-300">Exercício</th>
+                            <th class="py-2 text-sm text-gray-300">Séries x Reps</th>
+                            <th class="py-2 text-sm text-gray-300">Descanso</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="border-b border-gray-700">
+                            <td class="py-3">Polichinelo</td>
+                            <td class="py-3">3 x 60 seg</td>
+                            <td class="py-3">30s</td>
+                        </tr>
+                        <tr class="border-b border-gray-700">
+                            <td class="py-3">Afundo com Salto (alternando)</td>
+                            <td class="py-3">3 x 16 (total)</td>
+                            <td class="py-3">60s</td>
+                        </tr>
+                        <tr class="border-b border-gray-700">
+                            <td class="py-3">Flexão "Pike" (para ombros)</td>
+                            <td class="py-3">3 x 10</td>
+                            <td class="py-3">60s</td>
+                        </tr>
+                        <tr class="border-b border-gray-700">
+                            <td class="py-3">Superman no Chão</td>
+                            <td class="py-3">3 x 15</td>
+                            <td class="py-3">45s</td>
+                        </tr>
+                        <tr>
+                            <td class="py-3">Corrida Estacionária (joelho alto)</td>
+                            <td class="py-3">3 x 45 seg</td>
+                            <td class="py-3">45s</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+
+        <!-- Seção de Notas Importantes -->
+        <footer class="mt-12 bg-gray-800 rounded-xl p-6">
+            <h3 class="text-xl font-bold text-white mb-4">Instruções Importantes</h3>
+            <ul class="list-disc list-inside space-y-2 text-gray-300">
+                <li><strong>Aquecimento:</strong> Antes de cada treino, faça 5-10 minutos de aquecimento. Pule corda, faça polichinelos ou corridinha no lugar.</li>
+                <li><strong>Execução:</strong> A qualidade do movimento é mais importante que a quantidade. Se não souber como fazer um exercício, pesquise um vídeo rápido para garantir a forma correta.</li>
+                <li><strong>Progressão:</strong> Quando sentir que os exercícios estão ficando fáceis, tente aumentar o número de repetições ou diminuir o tempo de descanso. Para exercícios com peso (mochila/garrafas), aumente a carga.</li>
+                <li><strong>Hidratação e Alimentação:</strong> Beba bastante água durante o dia e mantenha uma alimentação equilibrada para ter energia e ajudar na recuperação.</li>
+                <li><strong>Escute seu corpo:</strong> Se sentir dor (diferente do cansaço muscular), pare. O descanso é parte fundamental do treino.</li>
+            </ul>
+        </footer>
+
+    </div>
+</body>
+</html>
