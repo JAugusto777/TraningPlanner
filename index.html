@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Plano de Treino - Vôlei em Casa</title>
+    <title>Plano de Treino e Nutrição - Vôlei em Casa</title>
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Google Fonts -->
@@ -14,224 +14,256 @@
         /* Estilo customizado para usar a fonte Inter */
         body {
             font-family: 'Inter', sans-serif;
+            background-color: #111827; /* bg-gray-900 */
         }
         /* Efeito de hover sutil nos cards */
         .workout-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05), 0 0 0 1px rgba(59, 130, 246, 0.5);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+        /* Estilo para a seta de expansão */
+        .arrow-icon {
+            transition: transform 0.3s ease-in-out;
+            flex-shrink: 0; /* Impede que o ícone encolha */
+        }
+        /* Classe para girar a seta */
+        .rotate-180 {
+            transform: rotate(180deg);
+        }
+        /* Remove o padding da célula da descrição para o conteúdo tocar as bordas */
+        .description-cell {
+            padding: 0;
+        }
+        .description-content {
+            padding: 1rem; /* 16px */
+            background-color: #1F2937; /* bg-gray-800 */
         }
     </style>
 </head>
 <body class="bg-gray-900 text-gray-200 antialiased">
 
     <!-- Container Principal -->
-    <div class="container mx-auto p-4 md:p-8">
+    <div class="container mx-auto p-4 sm:p-6 md:p-8">
 
         <!-- Cabeçalho -->
         <header class="text-center mb-10">
-            <h1 class="text-4xl md:text-5xl font-bold text-white mb-2">Seu Treino Semanal de Vôlei</h1>
-            <p class="text-lg text-blue-300">Foco em potência, agilidade e prevenção de lesões.</p>
+            <h1 class="text-4xl md:text-5xl font-bold text-white mb-2">Seu Plano Semanal de Vôlei</h1>
+            <p class="text-lg text-blue-300">Treino, Nutrição e Foco para sua Evolução.</p>
         </header>
 
-        <!-- Grade de Treinos -->
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Seção de Treinos -->
+        <h2 class="text-3xl font-bold text-white mb-6 text-center md:text-left">📅 Plano de Treino</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8">
 
             <!-- Dia 1: Segunda-feira -->
-            <div class="workout-card bg-gray-800 rounded-xl shadow-lg p-6 transition-transform duration-300">
-                <h2 class="text-2xl font-bold text-blue-400 mb-1">Segunda-feira</h2>
-                <p class="text-gray-400 mb-4 font-semibold">Foco: Força de Pernas e Core</p>
+            <div class="workout-card bg-gray-800 rounded-xl shadow-lg transition-transform duration-300 overflow-hidden">
+                <div class="p-6">
+                    <h3 class="text-2xl font-bold text-blue-400 mb-1">Segunda-feira</h3>
+                    <p class="text-gray-400 mb-4 font-semibold">Foco: Força de Pernas e Core</p>
+                </div>
                 <table class="w-full text-left">
-                    <thead>
-                        <tr class="border-b border-gray-600">
-                            <th class="py-2 text-sm text-gray-300">Exercício</th>
-                            <th class="py-2 text-sm text-gray-300">Séries x Reps</th>
-                            <th class="py-2 text-sm text-gray-300">Descanso</th>
-                        </tr>
-                    </thead>
                     <tbody>
-                        <tr class="border-b border-gray-700">
-                            <td class="py-3">Agachamento Livre</td>
-                            <td class="py-3">3 x 15</td>
-                            <td class="py-3">60s</td>
+                        <!-- Exercício com Detalhes -->
+                        <tr class="border-t border-gray-700">
+                            <td class="p-0">
+                                <button class="w-full flex justify-between items-center text-left p-3 exercise-toggle">
+                                    <div class="flex items-center gap-4">
+                                        <span>Agachamento Livre</span>
+                                        <span class="text-sm text-gray-400 font-semibold">3 x 15</span>
+                                    </div>
+                                    <svg class="arrow-icon w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                                </button>
+                            </td>
                         </tr>
-                        <tr class="border-b border-gray-700">
-                            <td class="py-3">Afundo (cada perna)</td>
-                            <td class="py-3">3 x 12</td>
-                            <td class="py-3">60s</td>
+                        <tr class="hidden">
+                            <td class="description-cell"><div class="description-content text-gray-400 text-sm"><b>Execução:</b> Mantenha os pés na largura dos ombros, costas retas e desça como se fosse sentar em uma cadeira, até os joelhos formarem um ângulo de 90 graus. Empurre o chão com os calcanhares para subir.<br><br><b>Link do vídeo:</b> <a href="#" class="text-blue-400 hover:underline">[Em breve]</a></div></td>
                         </tr>
-                        <tr class="border-b border-gray-700">
-                            <td class="py-3">Ponte de Glúteos</td>
-                            <td class="py-3">3 x 20</td>
-                            <td class="py-3">45s</td>
-                        </tr>
-                        <tr class="border-b border-gray-700">
-                            <td class="py-3">Elevação de Panturrilha</td>
-                            <td class="py-3">4 x 20</td>
-                            <td class="py-3">30s</td>
-                        </tr>
-                        <tr>
-                            <td class="py-3">Prancha Abdominal</td>
-                            <td class="py-3">3 x 45 seg</td>
-                            <td class="py-3">45s</td>
-                        </tr>
+                        <!-- Fim do Exercício -->
+                        <tr class="border-t border-gray-700"><td class="p-0"><button class="w-full flex justify-between items-center text-left p-3 exercise-toggle"><div class="flex items-center gap-4"><span>Afundo (cada perna)</span><span class="text-sm text-gray-400 font-semibold">3 x 12</span></div><svg class="arrow-icon w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></button></td></tr><tr class="hidden"><td class="description-cell"><div class="description-content text-gray-400 text-sm"><b>Execução:</b> Dê um passo à frente e flexione ambos os joelhos até formarem 90 graus. O joelho de trás quase toca o chão. Mantenha o tronco reto. Volte e troque a perna.<br><br><b>Link do vídeo:</b> <a href="#" class="text-blue-400 hover:underline">[Em breve]</a></div></td></tr>
+                        <tr class="border-t border-gray-700"><td class="p-0"><button class="w-full flex justify-between items-center text-left p-3 exercise-toggle"><div class="flex items-center gap-4"><span>Ponte de Glúteos</span><span class="text-sm text-gray-400 font-semibold">3 x 20</span></div><svg class="arrow-icon w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></button></td></tr><tr class="hidden"><td class="description-cell"><div class="description-content text-gray-400 text-sm"><b>Execução:</b> Deite-se de costas, joelhos dobrados e pés no chão. Eleve o quadril até seu corpo formar uma linha reta dos ombros aos joelhos. Contraia os glúteos no topo.<br><br><b>Link do vídeo:</b> <a href="#" class="text-blue-400 hover:underline">[Em breve]</a></div></td></tr>
+                        <tr class="border-t border-gray-700"><td class="p-0"><button class="w-full flex justify-between items-center text-left p-3 exercise-toggle"><div class="flex items-center gap-4"><span>Elevação de Panturrilha</span><span class="text-sm text-gray-400 font-semibold">4 x 20</span></div><svg class="arrow-icon w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></button></td></tr><tr class="hidden"><td class="description-cell"><div class="description-content text-gray-400 text-sm"><b>Execução:</b> Em pé, eleve os calcanhares o máximo que puder, ficando na ponta dos pés. Segure por um segundo e desça lentamente. Use um degrau para maior amplitude.<br><br><b>Link do vídeo:</b> <a href="#" class="text-blue-400 hover:underline">[Em breve]</a></div></td></tr>
+                        <tr class="border-t border-gray-700"><td class="p-0"><button class="w-full flex justify-between items-center text-left p-3 exercise-toggle"><div class="flex items-center gap-4"><span>Prancha Abdominal</span><span class="text-sm text-gray-400 font-semibold">3 x 45s</span></div><svg class="arrow-icon w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></button></td></tr><tr class="hidden"><td class="description-cell"><div class="description-content text-gray-400 text-sm"><b>Execução:</b> Apoie os antebraços e as pontas dos pés no chão. Mantenha o corpo reto como uma tábua, contraindo o abdômen e os glúteos. Não deixe o quadril cair.<br><br><b>Link do vídeo:</b> <a href="#" class="text-blue-400 hover:underline">[Em breve]</a></div></td></tr>
                     </tbody>
                 </table>
             </div>
 
             <!-- Dia 2: Terça-feira -->
-            <div class="workout-card bg-gray-800 rounded-xl shadow-lg p-6 transition-transform duration-300">
-                <h2 class="text-2xl font-bold text-blue-400 mb-1">Terça-feira</h2>
-                <p class="text-gray-400 mb-4 font-semibold">Foco: Tronco e Ombros</p>
+            <div class="workout-card bg-gray-800 rounded-xl shadow-lg transition-transform duration-300 overflow-hidden">
+                <div class="p-6"><h3 class="text-2xl font-bold text-blue-400 mb-1">Terça-feira</h3><p class="text-gray-400 mb-4 font-semibold">Foco: Tronco e Ombros</p></div>
                 <table class="w-full text-left">
-                    <thead>
-                        <tr class="border-b border-gray-600">
-                            <th class="py-2 text-sm text-gray-300">Exercício</th>
-                            <th class="py-2 text-sm text-gray-300">Séries x Reps</th>
-                            <th class="py-2 text-sm text-gray-300">Descanso</th>
-                        </tr>
-                    </thead>
                     <tbody>
-                        <tr class="border-b border-gray-700">
-                            <td class="py-3">Flexão de Braço (joelhos opcional)</td>
-                            <td class="py-3">3 x Máx.</td>
-                            <td class="py-3">60s</td>
-                        </tr>
-                        <tr class="border-b border-gray-700">
-                            <td class="py-3">Remada Curvada (com mochila)</td>
-                            <td class="py-3">3 x 15</td>
-                            <td class="py-3">60s</td>
-                        </tr>
-                        <tr class="border-b border-gray-700">
-                            <td class="py-3">Desenvolvimento (com garrafas)</td>
-                            <td class="py-3">3 x 12</td>
-                            <td class="py-3">60s</td>
-                        </tr>
-                        <tr class="border-b border-gray-700">
-                            <td class="py-3">Tríceps no Banco/Cadeira</td>
-                            <td class="py-3">3 x 15</td>
-                            <td class="py-3">45s</td>
-                        </tr>
-                        <tr>
-                            <td class="py-3">Prancha Lateral (cada lado)</td>
-                            <td class="py-3">3 x 30 seg</td>
-                            <td class="py-3">30s</td>
-                        </tr>
+                        <tr class="border-t border-gray-700"><td class="p-0"><button class="w-full flex justify-between items-center text-left p-3 exercise-toggle"><div class="flex items-center gap-4"><span>Flexão de Braço</span><span class="text-sm text-gray-400 font-semibold">3 x Máx.</span></div><svg class="arrow-icon w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></button></td></tr><tr class="hidden"><td class="description-cell"><div class="description-content text-gray-400 text-sm"><b>Execução:</b> Mãos na largura dos ombros. Desça o peito em direção ao chão, mantendo o corpo reto. Empurre para voltar. Se necessário, apoie os joelhos no chão.<br><br><b>Link do vídeo:</b> <a href="#" class="text-blue-400 hover:underline">[Em breve]</a></div></td></tr>
+                        <tr class="border-t border-gray-700"><td class="p-0"><button class="w-full flex justify-between items-center text-left p-3 exercise-toggle"><div class="flex items-center gap-4"><span>Remada Curvada (mochila)</span><span class="text-sm text-gray-400 font-semibold">3 x 15</span></div><svg class="arrow-icon w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></button></td></tr><tr class="hidden"><td class="description-cell"><div class="description-content text-gray-400 text-sm"><b>Execução:</b> Incline o tronco para frente com as costas retas. Segure uma mochila com peso e puxe-a em direção ao abdômen, contraindo as costas.<br><br><b>Link do vídeo:</b> <a href="#" class="text-blue-400 hover:underline">[Em breve]</a></div></td></tr>
+                        <tr class="border-t border-gray-700"><td class="p-0"><button class="w-full flex justify-between items-center text-left p-3 exercise-toggle"><div class="flex items-center gap-4"><span>Desenvolvimento (garrafas)</span><span class="text-sm text-gray-400 font-semibold">3 x 12</span></div><svg class="arrow-icon w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></button></td></tr><tr class="hidden"><td class="description-cell"><div class="description-content text-gray-400 text-sm"><b>Execução:</b> Sentada ou em pé, segure garrafas na altura dos ombros. Empurre-as para cima até os braços esticarem, sem travar os cotovelos.<br><br><b>Link do vídeo:</b> <a href="#" class="text-blue-400 hover:underline">[Em breve]</a></div></td></tr>
+                        <tr class="border-t border-gray-700"><td class="p-0"><button class="w-full flex justify-between items-center text-left p-3 exercise-toggle"><div class="flex items-center gap-4"><span>Tríceps no Banco/Cadeira</span><span class="text-sm text-gray-400 font-semibold">3 x 15</span></div><svg class="arrow-icon w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></button></td></tr><tr class="hidden"><td class="description-cell"><div class="description-content text-gray-400 text-sm"><b>Execução:</b> De costas para um banco, apoie as mãos na borda. Estique as pernas e desça o corpo dobrando os cotovelos até 90 graus. Empurre para subir.<br><br><b>Link do vídeo:</b> <a href="#" class="text-blue-400 hover:underline">[Em breve]</a></div></td></tr>
+                        <tr class="border-t border-gray-700"><td class="p-0"><button class="w-full flex justify-between items-center text-left p-3 exercise-toggle"><div class="flex items-center gap-4"><span>Prancha Lateral (cada lado)</span><span class="text-sm text-gray-400 font-semibold">3 x 30s</span></div><svg class="arrow-icon w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></button></td></tr><tr class="hidden"><td class="description-cell"><div class="description-content text-gray-400 text-sm"><b>Execução:</b> Deite de lado, apoiando o antebraço no chão. Eleve o quadril, mantendo o corpo reto. Segure a posição e depois troque o lado.<br><br><b>Link do vídeo:</b> <a href="#" class="text-blue-400 hover:underline">[Em breve]</a></div></td></tr>
                     </tbody>
                 </table>
             </div>
 
             <!-- Dia 3: Quarta-feira -->
             <div class="workout-card bg-gray-800 rounded-xl shadow-lg p-6 transition-transform duration-300">
-                <h2 class="text-2xl font-bold text-green-400 mb-1">Quarta-feira</h2>
+                <h3 class="text-2xl font-bold text-green-400 mb-1">Quarta-feira</h3>
                 <p class="text-gray-400 mb-4 font-semibold">Foco: Descanso Ativo e Mobilidade</p>
-                <div class="text-gray-300 space-y-2">
-                    <p>• 20 min de caminhada leve.</p>
-                    <p>• Alongamento de quadríceps (30s cada perna).</p>
-                    <p>• Alongamento de posteriores (30s cada perna).</p>
-                    <p>• Alongamento de peitoral e ombros (30s).</p>
-                    <p>• Rotação de tronco (20x).</p>
-                    <p class="pt-2 text-sm text-gray-500">*O objetivo é recuperar o corpo, não forçar.</p>
-                </div>
+                <ul class="text-gray-300 space-y-2 list-disc list-inside">
+                    <li>20 min de caminhada leve.</li>
+                    <li>Alongamento de quadríceps (30s cada perna).</li>
+                    <li>Alongamento de posteriores (30s cada perna).</li>
+                    <li>Alongamento de peitoral e ombros (30s).</li>
+                    <li>Rotação de tronco (20x).</li>
+                </ul>
+                <p class="pt-4 text-sm text-gray-500">*O objetivo é recuperar o corpo, não forçar.</p>
             </div>
 
             <!-- Dia 4: Quinta-feira -->
-            <div class="workout-card bg-gray-800 rounded-xl shadow-lg p-6 transition-transform duration-300">
-                <h2 class="text-2xl font-bold text-blue-400 mb-1">Quinta-feira</h2>
-                <p class="text-gray-400 mb-4 font-semibold">Foco: Pliometria e Agilidade (Potência)</p>
+            <div class="workout-card bg-gray-800 rounded-xl shadow-lg transition-transform duration-300 overflow-hidden">
+                <div class="p-6"><h3 class="text-2xl font-bold text-blue-400 mb-1">Quinta-feira</h3><p class="text-gray-400 mb-4 font-semibold">Foco: Pliometria e Agilidade</p></div>
                 <table class="w-full text-left">
-                    <thead>
-                        <tr class="border-b border-gray-600">
-                            <th class="py-2 text-sm text-gray-300">Exercício</th>
-                            <th class="py-2 text-sm text-gray-300">Séries x Reps</th>
-                            <th class="py-2 text-sm text-gray-300">Descanso</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr class="border-b border-gray-700">
-                            <td class="py-3">Agachamento com Salto</td>
-                            <td class="py-3">4 x 10</td>
-                            <td class="py-3">75s</td>
-                        </tr>
-                        <tr class="border-b border-gray-700">
-                            <td class="py-3">Salto em Caixa (use um degrau)</td>
-                            <td class="py-3">4 x 8</td>
-                            <td class="py-3">90s</td>
-                        </tr>
-                        <tr class="border-b border-gray-700">
-                            <td class="py-3">Deslocamento Lateral Rápido</td>
-                            <td class="py-3">3 x 45 seg</td>
-                            <td class="py-3">45s</td>
-                        </tr>
-                        <tr class="border-b border-gray-700">
-                            <td class="py-3">Burpee (sem flexão)</td>
-                            <td class="py-3">3 x 10</td>
-                            <td class="py-3">75s</td>
-                        </tr>
-                        <tr>
-                            <td class="py-3">Abdominal Remador</td>
-                            <td class="py-3">3 x 20</td>
-                            <td class="py-3">45s</td>
-                        </tr>
+                     <tbody>
+                        <tr class="border-t border-gray-700"><td class="p-0"><button class="w-full flex justify-between items-center text-left p-3 exercise-toggle"><div class="flex items-center gap-4"><span>Agachamento com Salto</span><span class="text-sm text-gray-400 font-semibold">4 x 10</span></div><svg class="arrow-icon w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></button></td></tr><tr class="hidden"><td class="description-cell"><div class="description-content text-gray-400 text-sm"><b>Execução:</b> Faça um agachamento normal e, ao subir, salte o mais alto que puder. Aterrisse suavemente, já amortecendo para o próximo agachamento.<br><br><b>Link do vídeo:</b> <a href="#" class="text-blue-400 hover:underline">[Em breve]</a></div></td></tr>
+                        <tr class="border-t border-gray-700"><td class="p-0"><button class="w-full flex justify-between items-center text-left p-3 exercise-toggle"><div class="flex items-center gap-4"><span>Salto em Caixa (degrau)</span><span class="text-sm text-gray-400 font-semibold">4 x 8</span></div><svg class="arrow-icon w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></button></td></tr><tr class="hidden"><td class="description-cell"><div class="description-content text-gray-400 text-sm"><b>Execução:</b> Fique em frente a um degrau ou superfície estável. Salte com os dois pés, aterrissando suavemente em cima da caixa. Desça um pé de cada vez.<br><br><b>Link do vídeo:</b> <a href="#" class="text-blue-400 hover:underline">[Em breve]</a></div></td></tr>
+                        <tr class="border-t border-gray-700"><td class="p-0"><button class="w-full flex justify-between items-center text-left p-3 exercise-toggle"><div class="flex items-center gap-4"><span>Deslocamento Lateral</span><span class="text-sm text-gray-400 font-semibold">3 x 45s</span></div><svg class="arrow-icon w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></button></td></tr><tr class="hidden"><td class="description-cell"><div class="description-content text-gray-400 text-sm"><b>Execução:</b> Em posição semi-agachada, mova-se lateralmente com passos rápidos, sem cruzar os pés. Mantenha a postura baixa e o abdômen contraído.<br><br><b>Link do vídeo:</b> <a href="#" class="text-blue-400 hover:underline">[Em breve]</a></div></td></tr>
+                        <tr class="border-t border-gray-700"><td class="p-0"><button class="w-full flex justify-between items-center text-left p-3 exercise-toggle"><div class="flex items-center gap-4"><span>Burpee (sem flexão)</span><span class="text-sm text-gray-400 font-semibold">3 x 10</span></div><svg class="arrow-icon w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></button></td></tr><tr class="hidden"><td class="description-cell"><div class="description-content text-gray-400 text-sm"><b>Execução:</b> Agache, coloque as mãos no chão, jogue os pés para trás (posição de prancha), volte os pés para perto das mãos e salte.<br><br><b>Link do vídeo:</b> <a href="#" class="text-blue-400 hover:underline">[Em breve]</a></div></td></tr>
+                        <tr class="border-t border-gray-700"><td class="p-0"><button class="w-full flex justify-between items-center text-left p-3 exercise-toggle"><div class="flex items-center gap-4"><span>Abdominal Remador</span><span class="text-sm text-gray-400 font-semibold">3 x 20</span></div><svg class="arrow-icon w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></button></td></tr><tr class="hidden"><td class="description-cell"><div class="description-content text-gray-400 text-sm"><b>Execução:</b> Deite-se com braços e pernas esticados. Simultaneamente, eleve o tronco e os joelhos, abraçando-os. Volte à posição inicial de forma controlada.<br><br><b>Link do vídeo:</b> <a href="#" class="text-blue-400 hover:underline">[Em breve]</a></div></td></tr>
                     </tbody>
                 </table>
             </div>
 
             <!-- Dia 5: Sexta-feira -->
-            <div class="workout-card bg-gray-800 rounded-xl shadow-lg p-6 transition-transform duration-300">
-                <h2 class="text-2xl font-bold text-blue-400 mb-1">Sexta-feira</h2>
-                <p class="text-gray-400 mb-4 font-semibold">Foco: Condicionamento Full Body</p>
+             <div class="workout-card bg-gray-800 rounded-xl shadow-lg transition-transform duration-300 overflow-hidden">
+                <div class="p-6"><h3 class="text-2xl font-bold text-blue-400 mb-1">Sexta-feira</h3><p class="text-gray-400 mb-4 font-semibold">Foco: Condicionamento Full Body</p></div>
                 <table class="w-full text-left">
-                    <thead>
-                        <tr class="border-b border-gray-600">
-                            <th class="py-2 text-sm text-gray-300">Exercício</th>
-                            <th class="py-2 text-sm text-gray-300">Séries x Reps</th>
-                            <th class="py-2 text-sm text-gray-300">Descanso</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr class="border-b border-gray-700">
-                            <td class="py-3">Polichinelo</td>
-                            <td class="py-3">3 x 60 seg</td>
-                            <td class="py-3">30s</td>
-                        </tr>
-                        <tr class="border-b border-gray-700">
-                            <td class="py-3">Afundo com Salto (alternando)</td>
-                            <td class="py-3">3 x 16 (total)</td>
-                            <td class="py-3">60s</td>
-                        </tr>
-                        <tr class="border-b border-gray-700">
-                            <td class="py-3">Flexão "Pike" (para ombros)</td>
-                            <td class="py-3">3 x 10</td>
-                            <td class="py-3">60s</td>
-                        </tr>
-                        <tr class="border-b border-gray-700">
-                            <td class="py-3">Superman no Chão</td>
-                            <td class="py-3">3 x 15</td>
-                            <td class="py-3">45s</td>
-                        </tr>
-                        <tr>
-                            <td class="py-3">Corrida Estacionária (joelho alto)</td>
-                            <td class="py-3">3 x 45 seg</td>
-                            <td class="py-3">45s</td>
-                        </tr>
+                     <tbody>
+                        <tr class="border-t border-gray-700"><td class="p-0"><button class="w-full flex justify-between items-center text-left p-3 exercise-toggle"><div class="flex items-center gap-4"><span>Polichinelo</span><span class="text-sm text-gray-400 font-semibold">3 x 60s</span></div><svg class="arrow-icon w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></button></td></tr><tr class="hidden"><td class="description-cell"><div class="description-content text-gray-400 text-sm"><b>Execução:</b> Salte abrindo pernas e braços simultaneamente. Volte à posição inicial com outro salto. Mantenha um ritmo constante.<br><br><b>Link do vídeo:</b> <a href="#" class="text-blue-400 hover:underline">[Em breve]</a></div></td></tr>
+                        <tr class="border-t border-gray-700"><td class="p-0"><button class="w-full flex justify-between items-center text-left p-3 exercise-toggle"><div class="flex items-center gap-4"><span>Afundo com Salto</span><span class="text-sm text-gray-400 font-semibold">3 x 16</span></div><svg class="arrow-icon w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></button></td></tr><tr class="hidden"><td class="description-cell"><div class="description-content text-gray-400 text-sm"><b>Execução:</b> Faça um afundo e, ao subir, salte trocando a posição das pernas no ar. Aterrisse suavemente já no afundo com a perna oposta.<br><br><b>Link do vídeo:</b> <a href="#" class="text-blue-400 hover:underline">[Em breve]</a></div></td></tr>
+                        <tr class="border-t border-gray-700"><td class="p-0"><button class="w-full flex justify-between items-center text-left p-3 exercise-toggle"><div class="flex items-center gap-4"><span>Flexão "Pike"</span><span class="text-sm text-gray-400 font-semibold">3 x 10</span></div><svg class="arrow-icon w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></button></td></tr><tr class="hidden"><td class="description-cell"><div class="description-content text-gray-400 text-sm"><b>Execução:</b> Fique em posição de "V" invertido, com o quadril elevado. Dobre os cotovelos, levando o topo da cabeça em direção ao chão. Foco nos ombros.<br><br><b>Link do vídeo:</b> <a href="#" class="text-blue-400 hover:underline">[Em breve]</a></div></td></tr>
+                        <tr class="border-t border-gray-700"><td class="p-0"><button class="w-full flex justify-between items-center text-left p-3 exercise-toggle"><div class="flex items-center gap-4"><span>Superman no Chão</span><span class="text-sm text-gray-400 font-semibold">3 x 15</span></div><svg class="arrow-icon w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></button></td></tr><tr class="hidden"><td class="description-cell"><div class="description-content text-gray-400 text-sm"><b>Execução:</b> Deite de bruços, braços esticados à frente. Eleve braços, peito e pernas do chão simultaneamente, contraindo a lombar e os glúteos.<br><br><b>Link do vídeo:</b> <a href="#" class="text-blue-400 hover:underline">[Em breve]</a></div></td></tr>
+                        <tr class="border-t border-gray-700"><td class="p-0"><button class="w-full flex justify-between items-center text-left p-3 exercise-toggle"><div class="flex items-center gap-4"><span>Corrida Estacionária</span><span class="text-sm text-gray-400 font-semibold">3 x 45s</span></div><svg class="arrow-icon w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></button></td></tr><tr class="hidden"><td class="description-cell"><div class="description-content text-gray-400 text-sm"><b>Execução:</b> Corra no lugar, elevando bem os joelhos, na altura do quadril. Mantenha o ritmo e a respiração constantes.<br><br><b>Link do vídeo:</b> <a href="#" class="text-blue-400 hover:underline">[Em breve]</a></div></td></tr>
                     </tbody>
                 </table>
             </div>
-
         </div>
+
+        <!-- Seção de Alimentação -->
+        <section class="mt-12 bg-gray-800 rounded-xl p-6 md:p-8">
+            <h2 class="text-3xl font-bold text-white mb-6 text-center">🍽️ Seu Plano Alimentar 💪</h2>
+            <div class="max-w-4xl mx-auto">
+                <div class="bg-gray-900/50 rounded-lg p-4 mb-6">
+                    <h3 class="font-bold text-lg text-yellow-300 mb-2">✅ Lembretes Importantes:</h3>
+                    <ul class="list-disc list-inside space-y-2 text-gray-300 text-sm">
+                        <li><b>Aprovação Médica:</b> Converse com seu médico sobre a creatina e para a anemia.</li>
+                        <li><b>Muita Água!</b> Beba 3-4 litros/dia. Essencial para treinos e vôlei!</li>
+                        <li><b>Não Pule Refeições:</b> Coma a cada 3 horas para manter a energia e nutrientes.</li>
+                        <li><b>Qualidade > Quantidade:</b> Foque em alimentos nutritivos.</li>
+                        <li><b>Evite:</b> Ultraprocessados (miojo, salgados fritos, refri).</li>
+                    </ul>
+                </div>
+                
+                <h3 class="font-bold text-xl text-white mb-4">🗓️ Sugestão de Refeições Diárias:</h3>
+                <div class="space-y-6">
+                    <!-- Refeição 1 -->
+                    <div class="p-4 bg-gray-700/40 rounded-lg">
+                        <p class="font-semibold text-lg">1. 🌅 Pré-Escola</p>
+                        <div class="text-gray-400 text-sm mt-2 space-y-2">
+                            <p><b>Opção 1:</b></p>
+                            <ul class="list-disc list-inside pl-4"><li>Pão integral (2 fatias) com ovos mexidos (2).</li><li>Leite integral (1 copo) com achocolatado/café.</li></ul>
+                            <p><b>Opção 2:</b></p>
+                            <ul class="list-disc list-inside pl-4"><li>Banana (1) amassada com aveia (2 col. sopa) e mel.</li></ul>
+                        </div>
+                    </div>
+                    <!-- Refeição 2 -->
+                    <div class="p-4 bg-gray-700/40 rounded-lg">
+                        <p class="font-semibold text-lg">2. 🎒 Lanche da Manhã (Merenda)</p>
+                        <div class="text-gray-400 text-sm mt-2 space-y-2">
+                            <p><b>Opção 1:</b></p>
+                            <ul class="list-disc list-inside pl-4"><li>Iogurte natural integral (170g) com fruta e granola.</li></ul>
+                             <p><b>Opção 2:</b></p>
+                            <ul class="list-disc list-inside pl-4"><li>Sanduíche natural (pão integral) com frango ou atum.</li></ul>
+                        </div>
+                    </div>
+                    <!-- Refeição 3 -->
+                    <div class="p-4 bg-gray-700/40 rounded-lg">
+                        <p class="font-semibold text-lg">3. 🍲 Almoço (Comida de Verdade!)</p>
+                        <ul class="list-disc list-inside text-gray-400 text-sm mt-2 pl-4">
+                            <li><b>Arroz:</b> 4-5 colheres de sopa.</li>
+                            <li><b>Feijão:</b> 1 concha grande.</li>
+                            <li><b>Proteína:</b> Carne, frango ou peixe (tamanho da palma da mão).</li>
+                            <li><b>Salada e Legumes:</b> À vontade.</li>
+                        </ul>
+                    </div>
+                    <!-- Refeição 4 -->
+                    <div class="p-4 bg-yellow-900/20 border border-yellow-500/30 rounded-lg">
+                        <p class="font-semibold text-lg text-yellow-300">4. 💪 Lanche da Tarde (Pós-escola / Pré-Vôlei)</p>
+                        <p class="text-gray-300 text-sm mt-2"><b>🥤 Seu Hipercalórico Caseiro (Obrigatório!)</b></p>
+                        <div class="text-gray-400 text-sm mt-2 space-y-2">
+                            <p><b>Variação Base:</b></p>
+                            <ul class="list-disc list-inside pl-4">
+                                <li>Leite integral (200ml)</li>
+                                <li>Banana (1) ou Abacate (100g)</li>
+                                <li>Aveia (2-3 col. sopa)</li>
+                                <li>Pasta de amendoim (1-2 col. sopa - confirme alergia!)</li>
+                                <li>Mel (1 col. sopa)</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- Refeição 5 -->
+                    <div class="p-4 bg-gray-700/40 rounded-lg">
+                        <p class="font-semibold text-lg">5. 🌃 Jantar</p>
+                        <div class="text-gray-400 text-sm mt-2 space-y-2">
+                            <p><b>Opção 1 (Ideal):</b></p>
+                            <ul class="list-disc list-inside pl-4"><li>Repetir o Almoço.</li></ul>
+                            <p><b>Opção 2 (Alternativa):</b></p>
+                            <ul class="list-disc list-inside pl-4"><li>Omelete/Crepioca (3 ovos) com legumes e queijo.</li><li>Servir com pão integral (2 fatias) ou batata doce.</li></ul>
+                        </div>
+                    </div>
+                     <!-- Refeição 6 -->
+                    <div class="p-4 bg-gray-700/40 rounded-lg">
+                        <p class="font-semibold text-lg">6. 😴 Ceia (Opcional)</p>
+                        <div class="text-gray-400 text-sm mt-2 space-y-2">
+                            <p><b>Opção 1:</b></p>
+                            <ul class="list-disc list-inside pl-4"><li>Leite integral (1 copo) com mel.</li></ul>
+                            <p><b>Opção 2:</b></p>
+                            <ul class="list-disc list-inside pl-4"><li>Iogurte natural integral (1) com aveia (2 col. sopa).</li></ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
         <!-- Seção de Notas Importantes -->
         <footer class="mt-12 bg-gray-800 rounded-xl p-6">
-            <h3 class="text-xl font-bold text-white mb-4">Instruções Importantes</h3>
+            <h3 class="text-xl font-bold text-white mb-4">Instruções Finais</h3>
             <ul class="list-disc list-inside space-y-2 text-gray-300">
-                <li><strong>Aquecimento:</strong> Antes de cada treino, faça 5-10 minutos de aquecimento. Pule corda, faça polichinelos ou corridinha no lugar.</li>
-                <li><strong>Execução:</strong> A qualidade do movimento é mais importante que a quantidade. Se não souber como fazer um exercício, pesquise um vídeo rápido para garantir a forma correta.</li>
-                <li><strong>Progressão:</strong> Quando sentir que os exercícios estão ficando fáceis, tente aumentar o número de repetições ou diminuir o tempo de descanso. Para exercícios com peso (mochila/garrafas), aumente a carga.</li>
-                <li><strong>Hidratação e Alimentação:</strong> Beba bastante água durante o dia e mantenha uma alimentação equilibrada para ter energia e ajudar na recuperação.</li>
-                <li><strong>Escute seu corpo:</strong> Se sentir dor (diferente do cansaço muscular), pare. O descanso é parte fundamental do treino.</li>
+                <li><strong>Aquecimento:</strong> Antes de cada treino, faça 5-10 minutos de aquecimento.</li>
+                <li><strong>Execução:</strong> A qualidade do movimento é mais importante que a quantidade.</li>
+                <li><strong>Progressão:</strong> Quando sentir que está fácil, aumente as repetições ou diminua o descanso.</li>
+                <li><strong>Escute seu corpo:</strong> Se sentir dor (diferente do cansaço muscular), pare.</li>
+                <li><strong>Paciência e Persistência:</strong> Ganhar peso e força leva tempo. Monitore e seja consistente!</li>
             </ul>
         </footer>
 
     </div>
+
+    <script>
+        // Adiciona a funcionalidade de 'accordion' para os exercícios
+        document.addEventListener('DOMContentLoaded', function () {
+            const toggles = document.querySelectorAll('.exercise-toggle');
+
+            toggles.forEach(toggle => {
+                toggle.addEventListener('click', () => {
+                    const descriptionRow = toggle.parentElement.parentElement.nextElementSibling;
+                    const arrow = toggle.querySelector('.arrow-icon');
+                    
+                    if (descriptionRow) {
+                        descriptionRow.classList.toggle('hidden');
+                    }
+                    if (arrow) {
+                        arrow.classList.toggle('rotate-180');
+                    }
+                });
+            });
+        });
+    </script>
+
 </body>
 </html>
